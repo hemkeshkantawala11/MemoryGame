@@ -127,8 +127,10 @@ nav {
     border: 1px solid #3498db; /* Blue border for each teacher's name */
     padding: 5px;
     border-radius: 5px;
-    background: #f0f7ff; /* Light blue background for each teacher's name */
-    color: #3498db; /* Blue text color for each teacher's name */
+    background: #f0f7ff;
+    color: #3498db;
+    max-height: 640px;
+    overflow: auto;
 }
 
 .central-text-content img {
