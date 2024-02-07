@@ -6,13 +6,13 @@ let hasFlippedCard = false;
 let lockBoard = false;
 let firstCard, secondCard;
 
-
 let pragy = "https://www.linkedin.com/in/agarwalpragy/?originalSubdomain=in";
 let anshuman = "https://www.linkedin.com/in/anshumansingh26/?originalSubdomain=in";
 let abhimanyu = "https://www.linkedin.com/in/abhimanyusaxena/?originalSubdomain=in";
 let bhavik = "https://www.linkedin.com/in/bhavikrathod/?originalSubdomain=in";
 let kshitij = "https://linkedin.com/in/kshitij-mishra-a5779334/?originalSubdomain=in";
-let aman = "https://www.linkedin.com/in/mohd-aman/?originalSubdomain=in"
+let aman = "https://www.linkedin.com/in/mohd-aman/?originalSubdomain=in";
+
 function flipCard() {
   if (lockBoard) return;
   if (this === firstCard) return;
@@ -22,13 +22,10 @@ function flipCard() {
   if (!hasFlippedCard) {
     hasFlippedCard = true;
     firstCard = this;
-    console.log("First card flipped:", firstCard);
     return;
   }
 
   secondCard = this;
-  console.log("Second card flipped:", secondCard);
-
   checkForMatch();
 }
 
@@ -38,10 +35,8 @@ function checkForMatch() {
       displayTeacherInfo(firstCard.getAttribute('data-framework'));
       markCorrectCard();
       disableCards();
-      
-      
     } else {
-        unflipCards();
+      unflipCards();
     }
   }
 }
@@ -49,7 +44,6 @@ function checkForMatch() {
 function disableCards() {
   firstCard.removeEventListener('click', flipCard);
   secondCard.removeEventListener('click', flipCard);
-
   resetBoard();
 }
 
@@ -59,7 +53,6 @@ function unflipCards() {
   setTimeout(() => {
     firstCard.classList.remove('flip');
     secondCard.classList.remove('flip');
-
     resetBoard();
   }, 1000);
 }
@@ -89,22 +82,19 @@ function displayTeacherInfo(teacherName) {
   centralTextBox.innerHTML = '';
   centralTextBox.appendChild(centralTextBoxContent);
 
-  // Show modal
   modal.innerHTML = '';
   modal.appendChild(createModalContent(teacherName));
   modal.style.display = 'block';
 
   setTimeout(() => {
     centralTextBox.classList.remove('animate-central-text');
-    modal.style.display = 'none'; // Hide the modal after a short span of time
-  }, 1000); // Adjust the time (in milliseconds) as needed
+    modal.style.display = 'none';
+  }, 1000);
 
-  // Add teacher name to the teachers box
   const teacherNameListElement = document.createElement('p');
   const teacherLink = document.createElement('a');
   nameAndPhoto.appendChild(teacherNameListElement);
 
-  // Add the correct LinkedIn link based on the teacher's name
   switch (teacherName.toLowerCase()) {
     case 'pragy':
       teacherLink.href = 'https://www.linkedin.com/in/agarwalpragy/?originalSubdomain=in';
@@ -125,15 +115,13 @@ function displayTeacherInfo(teacherName) {
       teacherLink.href = 'https://www.linkedin.com/in/mohd-aman/?originalSubdomain=in';
       break;
     default:
-      teacherLink.href = '#'; // Default link
+      teacherLink.href = '#';
   }
   teacherLink.target = '_blank';
 
   teacherLink.textContent = upperCaseTeacherName;
   teacherNameListElement.appendChild(teacherLink);
   teachersBox.appendChild(centralTextBoxContent);
-
-
 }
 
 function markCorrectCard() {
@@ -148,13 +136,10 @@ function markCorrectCard() {
   });
 })();
 
-
-
 const modal = document.createElement('div');
 modal.classList.add('modal');
 modal.style.display = 'none';
 
-// Create content for the modal
 function createModalContent(teacherName) {
   const modalContent = document.createElement('div');
   modalContent.classList.add('modal-content');
@@ -176,8 +161,6 @@ function createModalContent(teacherName) {
   return modalContent;
 }
 
-// Append the modal to the body
 document.body.appendChild(modal);
-
 
 cards.forEach(card => card.addEventListener('click', flipCard));

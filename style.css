@@ -9,7 +9,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #f0f7ff; /* Light blue background */
+    background: lightblue;
 }
 
 nav {
@@ -20,8 +20,8 @@ nav {
     justify-content: center;
     font-size: 24px;
     text-align: center;
-    background: #3498db; /* Blue background for the header */
-    color: #fff; /* White text color */
+    background: dodgerblue;
+    color: white;
 }
 
 .memory-game {
@@ -37,7 +37,7 @@ nav {
 .tb {
     display: flex;
     gap: 10vw;
-    margin-top: 20px; /* Added space between the section and the teachers box */
+    margin-top: 20px;
 }
 
 .memory-card {
@@ -67,7 +67,7 @@ nav {
     padding: 20px;
     position: absolute;
     border-radius: 5px;
-    background: #3498db; /* Blue background for the cards */
+    background: dodgerblue;
     backface-visibility: hidden;
 }
 
@@ -110,36 +110,35 @@ nav {
 .teachers-box {
     width: 200px;
     padding: 10px;
-    background: #fff; /* White background for the teachers box */
+    background: white;
     border-radius: 10px;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: end;
-    border: 2px solid #3498db;
+    border: 2px solid dodgerblue;
     flex-direction: column-reverse;
 }
 
 .teachers-box p {
     margin: 5px 0;
     font-size: 14px;
-    border: 1px solid #3498db; /* Blue border for each teacher's name */
+    border: 1px solid dodgerblue;
     padding: 5px;
     border-radius: 5px;
-    background: #f0f7ff;
-    color: #3498db;
+    background: lightblue;
+    color: dodgerblue;
     max-height: 640px;
     overflow: auto;
 }
 
 .central-text-content img {
-    width: 80px; /* Adjust the size as needed */
-    height: 80px; /* Adjust the size as needed */
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     margin-bottom: 10px;
 }
-
 
 .modal {
     display: none;
@@ -158,7 +157,7 @@ nav {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #fefefe;
+    background-color: white;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
